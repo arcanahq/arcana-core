@@ -7,6 +7,16 @@
 packages/core/build/
 packages/cardgames/build/
 
+# Solidity / Foundry (EVM contracts)
+contracts/evm/out/
+contracts/evm/cache/
+contracts/evm/broadcast/
+
+# Anchor / Solana contracts
+contracts/solana/.anchor/
+contracts/solana/target/
+contracts/solana/test-ledger/
+
 # Test / coverage artifacts
 **/coverage/
 **/.nyc_output/
@@ -27,3 +37,4 @@ packages/cardgames/build/
 # Editor / OS
 .DS_Store
 .idea/
+**/.cursor/

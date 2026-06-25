@@ -19,6 +19,15 @@ be added in later phases.
 
 See [`packages/README.md`](packages/README.md) for details on each package.
 
+## Contracts
+
+On-chain contracts live in [`contracts/`](contracts):
+
+- [`contracts/evm`](contracts/evm) — Solidity contracts (Foundry). `forge-std`
+  and `openzeppelin-contracts` are git submodules; run
+  `git submodule update --init --recursive` (or `forge install`) before building.
+- [`contracts/solana`](contracts/solana) — Anchor (Rust) programs.
+
 ## Getting started
 
 Each package is self-contained and installs independently:
@@ -40,8 +49,8 @@ cd packages
 
 - [x] TypeScript client SDK and wallet integrations
 - [x] AssemblyScript contract framework and game libraries
+- [x] Smart contracts (EVM + Solana)
 - [ ] Rust server and runtime
-- [ ] Smart contracts (EVM + Solana)
 - [ ] Example apps and templates
 
 ## License
