@@ -4,7 +4,7 @@
  */
 
 import { ProgramState } from "./state";
-import { GameStateView, ProgramStateView } from "./views";
+import { ProgramStateView } from "./views";
 
 /**
  * Normalize wallet/caller IDs before comparisons or KV key construction.
@@ -34,18 +34,6 @@ export function applyProgramStateView<T extends ProgramState>(state: T, view: Pr
  */
 export function programStateToView(state: ProgramState): ProgramStateView {
   const view = new ProgramStateView();
-  view.randomSeedFields = state.randomSeedFields.toView();
-  view.status = state.status;
-  view.environment = state.environment;
-  view.createdAt = state.createdAt;
-  return view;
-}
-
-/**
- * Create the nested GameStateView used by legacy hybrid game view classes.
- */
-export function gameStateToView(state: ProgramState): GameStateView {
-  const view = new GameStateView();
   view.randomSeedFields = state.randomSeedFields.toView();
   view.status = state.status;
   view.environment = state.environment;

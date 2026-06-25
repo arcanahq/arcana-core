@@ -6,7 +6,7 @@
  */
 
 import { getRandomValueFromSeed, getRandomInRangeFromSeed, getRandomIntInRangeFromSeed, RandomResult } from "../primitives/random";
-import { RandomSeedFieldsView, ProgramStateView, GameStateView } from "./views";
+import { RandomSeedFieldsView, ProgramStateView } from "./views";
 import { decodeStateBytesToMsgpackValue } from "./args";
 import { MsgpackKind } from "../primitives/msgpack_decode";
 
@@ -152,34 +152,6 @@ export class ProgramState {
    */
   resetRandomIndex(): void {
     this.randomSeedFields.randomSeedIndex = 0;
-  }
-}
-
-/**
- * @deprecated Use ProgramState for new programs.
- */
-export class GameState extends ProgramState {
-  static fromView(view: GameStateView): GameState {
-    const base = ProgramState.fromView(view);
-    const state = new GameState(
-      base.randomSeedFields.randomSeedIndex,
-      base.status,
-      base.environment,
-      base.createdAt
-    );
-    return state;
-  }
-
-  static fromBytes<T extends GameState>(bytes: Uint8Array): T {
-    const decoded = decodeStateBytesToMsgpackValue(bytes);
-    const view = new GameStateView();
-    if (decoded.kind == MsgpackKind.Array) {
-      return changetype<T>(GameState.fromView(GameStateView.fromMsgpackArray(decoded.arr)));
-    }
-    if (decoded.kind == MsgpackKind.Map) {
-      return changetype<T>(GameState.fromView(GameStateView.fromMsgpackMap(decoded.map)));
-    }
-    return changetype<T>(GameState.fromView(view));
   }
 }
 

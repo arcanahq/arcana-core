@@ -91,31 +91,6 @@ export class ProgramStateView implements MsgpackEncodable {
 }
 
 /**
- * @deprecated Use ProgramStateView for new programs.
- */
-export class GameStateView extends ProgramStateView {
-  static fromMsgpackMap(map: Map<string, MsgpackValue>): GameStateView {
-    const base = ProgramStateView.fromMsgpackMap(map);
-    const v = new GameStateView();
-    v.randomSeedFields = base.randomSeedFields;
-    v.status = base.status;
-    v.environment = base.environment;
-    v.createdAt = base.createdAt;
-    return v;
-  }
-
-  static fromMsgpackArray(arr: Array<MsgpackValue>): GameStateView {
-    const base = ProgramStateView.fromMsgpackArray(arr);
-    const v = new GameStateView();
-    v.randomSeedFields = base.randomSeedFields;
-    v.status = base.status;
-    v.environment = base.environment;
-    v.createdAt = base.createdAt;
-    return v;
-  }
-}
-
-/**
  * View class for ContractContext
  * No methods, just data fields.
  */

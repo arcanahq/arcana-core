@@ -4,7 +4,7 @@
  */
 
 import { describe, test, expect } from "assemblyscript-unittest-framework/assembly";
-import { GameState, ContractStatus } from "../core/state";
+import { ProgramState, ContractStatus } from "../core/state";
 import {
   ValidationResult,
   validateGameStatus,
@@ -41,7 +41,7 @@ describe("ValidationResult", () => {
 
 describe("validateGameStatus", () => {
   test("should return valid when status matches", () => {
-    const state = new GameState("", 0, 0, ContractStatus.ACTIVE, "TESTING", 0, "", "", 0, "", null);
+    const state = new ProgramState("", 0, 0, ContractStatus.ACTIVE, "TESTING", 0, "", "", 0, "", null);
     
     const result = validateGameStatus(state, ContractStatus.ACTIVE);
     
@@ -49,7 +49,7 @@ describe("validateGameStatus", () => {
   });
 
   test("should return invalid when status does not match", () => {
-    const state = new GameState("", 0, 0, ContractStatus.PENDING, "TESTING", 0, "", "", 0, "", null);
+    const state = new ProgramState("", 0, 0, ContractStatus.PENDING, "TESTING", 0, "", "", 0, "", null);
     
     const result = validateGameStatus(state, ContractStatus.ACTIVE);
     
@@ -60,7 +60,7 @@ describe("validateGameStatus", () => {
 
 describe("validateGameNotFinished", () => {
   test("should return valid when game is not finished", () => {
-    const state = new GameState("", 0, 0, ContractStatus.ACTIVE, "TESTING", 0, "", "", 0, "", null);
+    const state = new ProgramState("", 0, 0, ContractStatus.ACTIVE, "TESTING", 0, "", "", 0, "", null);
     
     const result = validateGameNotFinished(state);
     
@@ -68,7 +68,7 @@ describe("validateGameNotFinished", () => {
   });
 
   test("should return invalid when game is finished", () => {
-    const state = new GameState("", 0, 0, ContractStatus.FINISHED, "TESTING", 0, "", "", 0, "", null);
+    const state = new ProgramState("", 0, 0, ContractStatus.FINISHED, "TESTING", 0, "", "", 0, "", null);
     
     const result = validateGameNotFinished(state);
     
@@ -79,7 +79,7 @@ describe("validateGameNotFinished", () => {
 
 describe("validateGameActive", () => {
   test("should return valid when game is active", () => {
-    const state = new GameState("", 0, 0, ContractStatus.ACTIVE, "TESTING", 0, "", "", 0, "", null);
+    const state = new ProgramState("", 0, 0, ContractStatus.ACTIVE, "TESTING", 0, "", "", 0, "", null);
     
     const result = validateGameActive(state);
     
@@ -87,7 +87,7 @@ describe("validateGameActive", () => {
   });
 
   test("should return valid when game is running", () => {
-    const state = new GameState("", 0, 0, ContractStatus.RUNNING, "TESTING", 0, "", "", 0, "", null);
+    const state = new ProgramState("", 0, 0, ContractStatus.RUNNING, "TESTING", 0, "", "", 0, "", null);
     
     const result = validateGameActive(state);
     
@@ -95,7 +95,7 @@ describe("validateGameActive", () => {
   });
 
   test("should return invalid when game is pending", () => {
-    const state = new GameState("", 0, 0, ContractStatus.PENDING, "TESTING", 0, "", "", 0, "", null);
+    const state = new ProgramState("", 0, 0, ContractStatus.PENDING, "TESTING", 0, "", "", 0, "", null);
     
     const result = validateGameActive(state);
     
@@ -103,7 +103,7 @@ describe("validateGameActive", () => {
   });
 
   test("should return invalid when game is finished", () => {
-    const state = new GameState("", 0, 0, ContractStatus.FINISHED, "TESTING", 0, "", "", 0, "", null);
+    const state = new ProgramState("", 0, 0, ContractStatus.FINISHED, "TESTING", 0, "", "", 0, "", null);
     
     const result = validateGameActive(state);
     
@@ -113,7 +113,7 @@ describe("validateGameActive", () => {
 
 describe("validateGamePending", () => {
   test("should return valid when game is pending", () => {
-    const state = new GameState("", 0, 0, ContractStatus.PENDING, "TESTING", 0, "", "", 0, "", null);
+    const state = new ProgramState("", 0, 0, ContractStatus.PENDING, "TESTING", 0, "", "", 0, "", null);
     
     const result = validateGamePending(state);
     
@@ -121,7 +121,7 @@ describe("validateGamePending", () => {
   });
 
   test("should return invalid when game is not pending", () => {
-    const state = new GameState("", 0, 0, ContractStatus.ACTIVE, "TESTING", 0, "", "", 0, "", null);
+    const state = new ProgramState("", 0, 0, ContractStatus.ACTIVE, "TESTING", 0, "", "", 0, "", null);
     
     const result = validateGamePending(state);
     
@@ -387,7 +387,7 @@ describe("validateMax", () => {
 
 describe("Validation Integration", () => {
   test("should chain validations", () => {
-    const state = new GameState("", 0, 0, ContractStatus.ACTIVE, "TESTING", 0, "", "", 0, "", null);
+    const state = new ProgramState("", 0, 0, ContractStatus.ACTIVE, "TESTING", 0, "", "", 0, "", null);
     const players = ["player1", "player2"];
     
     const statusResult = validateGameActive(state);
@@ -400,7 +400,7 @@ describe("Validation Integration", () => {
   });
 
   test("should identify first failing validation", () => {
-    const state = new GameState("", 0, 0, ContractStatus.FINISHED, "TESTING", 0, "", "", 0, "", null);
+    const state = new ProgramState("", 0, 0, ContractStatus.FINISHED, "TESTING", 0, "", "", 0, "", null);
     const players = ["player1"];
     
     const statusResult = validateGameActive(state);

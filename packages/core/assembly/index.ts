@@ -7,7 +7,6 @@
 // Export state
 export {
   ProgramState,
-  GameState,
   RandomSeedFields,
   ContractStatus,
   Environment,
@@ -17,7 +16,6 @@ export {
 // Export views
 export {
   ProgramStateView,
-  GameStateView,
   RandomSeedFieldsView,
   ContractContextView
 } from "./core/views";
@@ -26,7 +24,6 @@ export {
   normalizeCallerId,
   applyProgramStateView,
   programStateToView,
-  gameStateToView,
   copyStringArray,
   copyStringMatrix,
   copyI64Matrix
