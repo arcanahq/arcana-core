@@ -3,7 +3,7 @@
     "assembly/**/*.ts": "assemblyscript"
   },
   "extends": "assemblyscript/std/assembly.json",
-  "include": ["src/**/*", "assembly/**/*"],
+  "include": ["assembly/**/*"],
   "exclude": ["node_modules", "dist"]
 }
 

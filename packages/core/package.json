@@ -6,10 +6,10 @@
   "publishConfig": {
     "access": "public"
   },
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "main": "assembly/index.ts",
+  "types": "assembly/index.ts",
   "exports": {
-    ".": "./src/index.ts",
+    ".": "./assembly/index.ts",
     "./assembly/index": "./assembly/index.ts",
     "./assembly/core/context": "./assembly/core/context.ts",
     "./assembly/core/args": "./assembly/core/args.ts",
