@@ -1,0 +1,22 @@
+{
+  "targets": {
+    "release": {
+      "binaryFile": "build/cardgames.wasm",
+      "textFile": "build/cardgames.wat",
+      "sourceMap": true,
+      "optimizeLevel": 3,
+      "shrinkLevel": 2,
+      "converge": false,
+      "noAssert": false,
+      "runtime": "stub",
+      "exportRuntime": true,
+      "exportStart": false,
+      "bindings": "esm",
+      "initialMemory": 10,
+      "maximumMemory": 256
+    }
+  },
+  "options": {
+    "bindings": "esm"
+  }
+}

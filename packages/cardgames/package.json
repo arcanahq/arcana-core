@@ -1,0 +1,48 @@
+{
+  "name": "@arcanahq/cardgames",
+  "version": "1.0.0",
+  "description": "Utility library for card game logic, blackjack actions, and poker game utilities",
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./assembly/index": "./assembly/index.ts",
+    "./assembly/blackjack/actions": "./assembly/blackjack/actions.ts",
+    "./assembly/blackjack/rules": "./assembly/blackjack/rules.ts",
+    "./assembly/blackjack/blackjack": "./assembly/blackjack/blackjack.ts",
+    "./assembly/cardgames": "./assembly/cardgames.ts",
+    "./assembly/cards": "./assembly/cards.ts",
+    "./assembly/poker": "./assembly/poker.ts",
+        "./assembly/deck": "./assembly/deck/index.ts",
+        "./assembly/poker/game": "./assembly/poker/index.ts"
+  },
+  "scripts": {
+    "build": "asc assembly/index.ts --target release --exportRuntime --disableWarning AS235",
+    "test": "npx cross-env NODE_OPTIONS='--import tsx' npx as-test --config ./as-test.config.js --testFiles assembly/__tests__/test.ts"
+  },
+  "keywords": [
+    "contract",
+    "engine",
+    "assemblyscript",
+    "wasm",
+    "cardgames",
+    "blackjack",
+    "poker",
+    "utility",
+    "library"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@assemblyscript/loader": "^0.28.9",
+    "assemblyscript": "^0.27.0",
+    "assemblyscript-unittest-framework": "^2.1.0",
+    "cross-env": "^7.0.3",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@arcanahq/core": "file:../core"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "extends": "../core/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@arcanahq/core/*": ["../core/assembly/*"],
+      "@arcanahq/cardgames/*": ["./assembly/*"]
+    }
+  },
+  "include": [
+    "assembly/**/*",
+    "src/**/*"
+  ]
+}
+
+

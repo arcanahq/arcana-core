@@ -1,0 +1,29 @@
+# Dependencies
+**/node_modules/
+
+# Build output
+**/dist/
+**/build/
+packages/core/build/
+packages/cardgames/build/
+
+# Test / coverage artifacts
+**/coverage/
+**/.nyc_output/
+**/.vitest/
+**/.as-test/
+**/.turbo/
+**/.eslintcache
+
+# Environment
+.env
+.env.*
+!.env.example
+**/.env
+
+# Logs
+*.log
+
+# Editor / OS
+.DS_Store
+.idea/

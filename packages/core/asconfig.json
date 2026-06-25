@@ -1,0 +1,18 @@
+{
+  "targets": {
+    "release": {
+      "binaryFile": "build/core.wasm",
+      "textFile": "build/core.wat",
+      "sourceMap": true,
+      "optimizeLevel": 3,
+      "shrinkLevel": 2,
+      "converge": true,
+      "noAssert": false,
+      "initialMemory": 10,
+      "maximumMemory": 256
+    }
+  },
+  "options": {
+    "bindings": "esm"
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "name": "@arcanahq/sdk-integrations",
+  "version": "0.1.0",
+  "description": "Optional wallet and account-abstraction integrations for @arcanahq/sdk",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "src",
+    "README.md"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./privy": {
+      "import": "./dist/privy.js",
+      "types": "./dist/privy.d.ts",
+      "default": "./dist/privy.js"
+    },
+    "./dynamic": {
+      "import": "./dist/dynamic.js",
+      "types": "./dist/dynamic.d.ts",
+      "default": "./dist/dynamic.js"
+    },
+    "./zerodev": {
+      "import": "./dist/zerodev.js",
+      "types": "./dist/zerodev.d.ts",
+      "default": "./dist/zerodev.js"
+    },
+    "./authenticate": {
+      "import": "./dist/authenticate.js",
+      "types": "./dist/authenticate.d.ts",
+      "default": "./dist/authenticate.js"
+    },
+    "./test": {
+      "import": "./dist/test.js",
+      "types": "./dist/test.d.ts",
+      "default": "./dist/test.js"
+    },
+    "./privy-zerodev": {
+      "import": "./dist/privy-zerodev.js",
+      "types": "./dist/privy-zerodev.d.ts",
+      "default": "./dist/privy-zerodev.js"
+    },
+    "./dynamic-zerodev": {
+      "import": "./dist/dynamic-zerodev.js",
+      "types": "./dist/dynamic-zerodev.d.ts",
+      "default": "./dist/dynamic-zerodev.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "vitest run",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "@arcanahq/sdk": "^0.1.0",
+    "@dynamic-labs-sdk/client": "*",
+    "@dynamic-labs-sdk/evm": "*",
+    "@dynamic-labs-sdk/react-hooks": "*",
+    "@dynamic-labs-sdk/zerodev": "*",
+    "@dynamic-labs/sdk-react-core": "*",
+    "@dynamic-labs/viem-utils": "*",
+    "@privy-io/react-auth": "*",
+    "@zerodev/sdk": "*",
+    "viem": "^2.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@dynamic-labs-sdk/client": {
+      "optional": true
+    },
+    "@dynamic-labs-sdk/evm": {
+      "optional": true
+    },
+    "@dynamic-labs-sdk/react-hooks": {
+      "optional": true
+    },
+    "@dynamic-labs-sdk/zerodev": {
+      "optional": true
+    },
+    "@dynamic-labs/sdk-react-core": {
+      "optional": true
+    },
+    "@dynamic-labs/viem-utils": {
+      "optional": true
+    },
+    "@privy-io/react-auth": {
+      "optional": true
+    },
+    "@zerodev/sdk": {
+      "optional": true
+    },
+    "viem": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@arcanahq/sdk": "file:../sdk",
+    "@types/node": "^20.19.41",
+    "typescript": "^5.3.0",
+    "viem": "^2.0.0",
+    "vitest": "^4.1.8"
+  }
+}

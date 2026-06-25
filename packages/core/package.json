@@ -1,0 +1,54 @@
+{
+  "name": "@arcanahq/core",
+  "version": "1.0.0",
+  "description": "Core utility library for AssemblyScript and TypeScript contract engines",
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./assembly/index": "./assembly/index.ts",
+    "./assembly/core/context": "./assembly/core/context.ts",
+    "./assembly/core/args": "./assembly/core/args.ts",
+    "./assembly/core/program": "./assembly/core/program.ts",
+    "./assembly/core/decorators": {
+      "types": "./assembly/core/decorators.d.ts",
+      "default": "./assembly/core/decorators.ts"
+    },
+    "./assembly/core/response": "./assembly/core/response.ts",
+    "./assembly/core/registry": "./assembly/core/registry.ts",
+    "./assembly/core/entrypoint_v2": "./assembly/core/entrypoint_v2.ts",
+    "./assembly/core/views": "./assembly/core/views.ts",
+    "./assembly/primitives/random": "./assembly/primitives/random.ts",
+    "./assembly/primitives/borsh_decode": "./assembly/primitives/borsh_decode.ts",
+    "./assembly/primitives/result": "./assembly/primitives/result.ts",
+    "./transform/decorator-transform": "./transform/decorator-transform.mjs",
+    "./tests/runner": "./tests/runner.js"
+  },
+  "scripts": {
+    "build": "asc assembly/index.ts --target release --exportRuntime --disableWarning AS235",
+    "test": "npx cross-env NODE_OPTIONS='--import tsx' npx as-test --config ./as-test.config.js --testFiles assembly/__tests__/index.spec.ts assembly/__tests__/random.spec.ts assembly/__tests__/msgpack_codegen.spec.ts"
+  },
+  "keywords": [
+    "contract",
+    "engine",
+    "assemblyscript",
+    "wasm",
+    "typescript",
+    "utility",
+    "library"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@assemblyscript/loader": "^0.28.9",
+    "assemblyscript-unittest-framework": "^2.1.0",
+    "cross-env": "^7.0.3",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3",
+    "warpo": "^2.2.2"
+  },
+  "dependencies": {
+    "assemblyscript": "^0.27.0"
+  }
+}
