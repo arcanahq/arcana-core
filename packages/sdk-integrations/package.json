@@ -4,6 +4,9 @@
   "description": "Optional wallet and account-abstraction integrations for @arcanahq/sdk",
   "license": "MIT",
   "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
