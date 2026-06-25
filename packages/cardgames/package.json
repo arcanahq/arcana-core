@@ -1,6 +1,6 @@
 {
   "name": "@arcanahq/cardgames",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Utility library for card game logic, blackjack actions, and poker game utilities",
   "type": "module",
   "publishConfig": {
@@ -17,8 +17,8 @@
     "./assembly/cardgames": "./assembly/cardgames.ts",
     "./assembly/cards": "./assembly/cards.ts",
     "./assembly/poker": "./assembly/poker.ts",
-        "./assembly/deck": "./assembly/deck/index.ts",
-        "./assembly/poker/game": "./assembly/poker/index.ts"
+    "./assembly/deck": "./assembly/deck/index.ts",
+    "./assembly/poker/game": "./assembly/poker/index.ts"
   },
   "scripts": {
     "build": "asc assembly/index.ts --target release --exportRuntime --disableWarning AS235",

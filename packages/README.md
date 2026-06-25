@@ -62,7 +62,8 @@ Optional adapters for teams using embedded wallets or account abstraction:
 ```
 
 ```typescript
-import { Entrypoint, State, Response } from "@arcanahq/core/assembly/core/entrypoint_v2";
+import { action, view, constructor } from "@arcanahq/core/assembly/core/decorators";
+import { ContractResponse } from "@arcanahq/core/assembly/core/response";
 import { DeckConfig, dealCardByIndex } from "@arcanahq/cardgames/assembly/deck";
 ```
 

@@ -1,6 +1,6 @@
 {
   "name": "@arcanahq/core",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Core utility library for AssemblyScript and TypeScript contract engines",
   "type": "module",
   "publishConfig": {
@@ -20,7 +20,6 @@
     },
     "./assembly/core/response": "./assembly/core/response.ts",
     "./assembly/core/registry": "./assembly/core/registry.ts",
-    "./assembly/core/entrypoint_v2": "./assembly/core/entrypoint_v2.ts",
     "./assembly/core/views": "./assembly/core/views.ts",
     "./assembly/primitives/random": "./assembly/primitives/random.ts",
     "./assembly/primitives/borsh_decode": "./assembly/primitives/borsh_decode.ts",

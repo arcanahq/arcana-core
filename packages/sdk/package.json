@@ -1,6 +1,6 @@
 {
   "name": "@arcanahq/sdk",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "General-purpose TypeScript SDK for building frontends that interact with deployed Arcana contracts",
   "license": "MIT",
   "type": "module",
